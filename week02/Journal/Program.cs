@@ -2,11 +2,12 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-       Console.WriteLine("Hello World! This is the Journal Project.");
+   static void Main(string[] args)
+   {
        Journal journal = new Journal();
        int choice = 0;
+
+       Console.WriteLine("Welcome to the Journal Program!");
 
        while (choice != 5)
        {

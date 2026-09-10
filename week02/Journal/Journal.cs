@@ -43,7 +43,8 @@ public class Journal
        {
            foreach (Entry entry in _entries)
            {
-               outputFile.WriteLine($"{entry.Date}~|~{entry.PromptText}~|~{entry.EntryText}");
+               // Updated to access the new _camelCase member variables
+               outputFile.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}");
            }
        }
        Console.WriteLine("Journal saved successfully.");
