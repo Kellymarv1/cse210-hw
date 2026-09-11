@@ -1,5 +1,15 @@
 using System;
 
+// ====================================================================
+// EXCEEDS REQUIREMENTS DESCRIPTION:
+// To exceed the core requirements, I added enhanced error handling 
+// using int.TryParse() to prevent the program from crashing if the 
+// user enters invalid (non-integer) input in the menu. I also expanded 
+// the prompt library to include more diverse questions beyond the core 
+// minimum, and ensured file loading checks if the file exists before 
+// attempting to read it, preventing runtime file errors.
+// ====================================================================
+
 class Program
 {
    static void Main(string[] args)
