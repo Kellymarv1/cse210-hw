@@ -1,19 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-// EXCEEDING REQUIREMENTS:
-// 1. Scripture Library: Instead of hardcoding a single scripture, this program 
-//    maintains a collection of multiple scriptures (including single verses and verse ranges) 
-//    and selects one at random each time the program runs.
-// 2. Stretch Challenge: The program implements the stretch requirement to select 
-//    random words exclusively from the pool of words that are not already hidden.
-
 class Program
 {
    static void Main(string[] args)
    {
        Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
-       // Create a library of scriptures
+
        List<Scripture> scriptureLibrary = new List<Scripture>
        {
            new Scripture(
@@ -30,18 +23,15 @@ class Program
            )
        };
 
-       // Select a random scripture from the library
        Random random = new Random();
        Scripture currentScripture = scriptureLibrary[random.Next(scriptureLibrary.Count)];
 
-       // Main program loop
        while (true)
        {
            Console.Clear();
            Console.WriteLine(currentScripture.GetDisplayText());
            Console.WriteLine();
 
-           // Check if all words are hidden to end the program naturally
            if (currentScripture.IsCompletelyHidden())
            {
                Console.WriteLine("All words are hidden. Great job memorizing!");
@@ -56,7 +46,6 @@ class Program
                break;
            }
 
-           // Hide 3 random unhidden words at a time
            currentScripture.HideRandomWords(3);
        }
    }
